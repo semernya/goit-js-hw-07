@@ -36,7 +36,7 @@ const createBoxesOnClick = () => {
 };
 
 const destroyBoxesOnClick = () => {
-  destroyBoxes(); 
+  destroyBoxes();
 };
 
 createBtn.addEventListener("click", createBoxesOnClick);

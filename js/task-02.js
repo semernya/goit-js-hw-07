@@ -25,18 +25,14 @@ const images = [
   },
 ];
 const galleryList = document.querySelector(".gallery");
-const imgArr = [];
 
-for (let image of images) {
+const marcup = images.map(({url, alt}) => {
   const img = document.createElement("img");
-  img.url = image.url;
-  img.alt = image.alt;
-  img.classList.add("galery-img");
-  imgArr.push(img);
-}
-const marcup = imgArr
-  .map((element) => `<li class="gallery-item">${element.outerHTML}</li>`)
-  .join("");
-
-console.log(marcup);
+  img.setAttribute("src", url);
+  img.setAttribute("alt", alt);
+  img.classList.add("gallery-img")
+  return `<li class="gallery-item">${img.outerHTML}</li>`;
+}).join("");
+console.log(marcup)
 galleryList.insertAdjacentHTML("beforeend", marcup);
+console.log(galleryList);

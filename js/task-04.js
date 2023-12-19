@@ -13,9 +13,8 @@ const sendFormInfo = (event) => {
       password: elCollection.password.value,
     };
     console.log(formInfo);
+    form.reset();
   }
-
-  form.reset();
 };
 
 form.addEventListener("submit", sendFormInfo);
